@@ -16,7 +16,7 @@ const createTask = async (req, res) => {
       },
     })
 
-    await Tasks.create({
+    const task = await Tasks.create({
       title,
       description,
       categoryId,
@@ -25,7 +25,7 @@ const createTask = async (req, res) => {
 
     // TODO respond that the action has been performed.
     // por defecto se envia status 200
-    res.status(201).end();
+    res.status(201).send(task);
   } catch (error) {
     // catch error
     res.status(400).json(error);
