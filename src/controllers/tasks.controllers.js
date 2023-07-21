@@ -25,7 +25,7 @@ const createTask = async (req, res) => {
 
     // TODO respond that the action has been performed.
     // por defecto se envia status 200
-    res.status(201).send(task);
+    res.status(201).end();
   } catch (error) {
     // catch error
     res.status(400).json(error);
